@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Card Generator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}?v={{ STATIC_VERSION }}">
+</head>
+<body>
+    <div class="wedding-form">
+        <h1>Generate Your Wedding Card Now</h1>
+        <hr>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="wedding-card-details">
+                <!-- Groom Details -->
+                <div class="groom-details">
+                    <h2>Groom's details</h2>
+                    <hr>
+                    <label for="groom_photo">Groom's Photo:</label>
+                    <input type="file" name="groom_photo" id="groom_photo" class="photo" required>
+                    
+                    <label for="groom_first">Groom's First Name:</label>
+                    <input type="text" name="groom_first_name" id="groom_first" required>
+                    
+                    <label for="groom_last">Groom's Last Name:</label>
+                    <input type="text" name="groom_last_name" id="groom_last" required>
+                    
+                    <label for="groom_father">Groom's Father's Name:</label>
+                    <input type="text" name="groom_father" id="groom_father" required>
+                    
+                    <label for="groom_mother">Groom's Mother's Name:</label>
+                    <input type="text" name="groom_mother" id="groom_mother" required>
+                    
+                    <label for="groom_relative1">Groom's Relative 1:</label>
+                    <input type="text" name="groom_relative1" id="groom_relative1" required>
+                    
+                    <label for="groom_relative2">Groom's Relative 2:</label>
+                    <input type="text" name="groom_relative2" id="groom_relative2" required>
+                    
+                    <label for="groom_relative3">Groom's Relative 3:</label>
+                    <input type="text" name="groom_relative3" id="groom_relative3" required>
+                </div>
+                <!-- Bride Details -->
+                <div class="bride-details">
+                    <h2>Bride's details</h2>
+                    <hr>
+                    <label for="bride_photo">Bride's Photo:</label>
+                    <input type="file" name="bride_photo" id="bride_photo" class="photo" required>
+                    
+                    <label for="bride_first_name">Bride's First Name:</label>
+                    <input type="text" name="bride_first_name" id="bride_first_name" required>
+                    
+                    <label for="bride_last_name">Bride's Last Name:</label>
+                    <input type="text" name="bride_last_name" id="bride_last_name" required>
+                    
+                    <label for="bride_father">Bride's Father's Name:</label>
+                    <input type="text" name="bride_father" id="bride_father" required>
+                    
+                    <label for="bride_mother">Bride's Mother's Name:</label>
+                    <input type="text" name="bride_mother" id="bride_mother" required>
+                    
+                    <label for="bride_relative1">Bride's Relative 1:</label>
+                    <input type="text" name="bride_relative1" id="bride_relative1" required>
+                    
+                    <label for="bride_relative2">Bride's Relative 2:</label>
+                    <input type="text" name="bride_relative2" id="bride_relative2" required>
+                    
+                    <label for="bride_relative3">Bride's Relative 3:</label>
+                    <input type="text" name="bride_relative3" id="bride_relative3" required>
+                </div>
+                <!-- Marriage Details -->
+                <div class="marriage-details">
+                    <h2>Marriage Details</h2>
+                    <hr>
+                    <label for="date">Date:</label>
+                    <input type="date" name="date" id="date" required>
+                    
+                    <label for="time">Time:</label>
+                    <input type="time" name="time" id="time" required>
+                    
+                    <label for="venue">Venue:</label>
+                    <input type="text" name="venue" id="venue" required>
+                </div>
+            </div>
+            <div class="flex-center">
+                <input type="submit" class="generate" value="Generate">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

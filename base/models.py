@@ -1,0 +1,42 @@
+from django.db import models
+
+# Create your models here.
+class Marriage(models.Model):
+    groom_photo = models.ImageField(upload_to='groom_photos/')
+    groom_first_name = models.CharField(max_length=300)
+    groom_last_name = models.CharField(max_length=300)
+    groom_father = models.CharField(max_length=300)
+    groom_mother = models.CharField(max_length=300)
+    groom_relative1 = models.CharField(max_length=300)
+    groom_relative2 = models.CharField(max_length=300)
+    groom_relative3 = models.CharField(max_length=300)
+    bride_photo = models.ImageField(upload_to='bride_photos/')
+    bride_first_name = models.CharField(max_length=300)
+    bride_last_name = models.CharField(max_length=300)
+    bride_father = models.CharField(max_length=300)
+    bride_mother = models.CharField(max_length=300)
+    bride_relative1 = models.CharField(max_length=300)
+    bride_relative2 = models.CharField(max_length=300)
+    bride_relative3 = models.CharField(max_length=300)
+    date = models.DateField()
+    time = models.TimeField()
+    venue = models.CharField(max_length=300)
+    groom_first_name_nepali = models.CharField(max_length=300)
+    groom_last_name_nepali = models.CharField(max_length=300)
+    groom_father_nepali = models.CharField(max_length=300)
+    groom_mother_nepali = models.CharField(max_length=300)
+    groom_relative1_nepali = models.CharField(max_length=300)
+    groom_relative2_nepali = models.CharField(max_length=300)
+    groom_relative3_nepali = models.CharField(max_length=300)
+    bride_first_name_nepali = models.CharField(max_length=300)
+    bride_last_name_nepali = models.CharField(max_length=300)
+    bride_father_nepali = models.CharField(max_length=300)
+    bride_mother_nepali = models.CharField(max_length=300)
+    bride_relative1_nepali = models.CharField(max_length=300)
+    bride_relative2_nepali = models.CharField(max_length=300)
+    bride_relative3_nepali = models.CharField(max_length=300)
+    time_in_nepali = models.TimeField()
+    venue_nepali = models.CharField(max_length=300)
+
+    def __str__(self):
+        return f"({self.groom_first_name}{self.groom_last_name} WEDS {self.bride_first_name}{self.bride_last_name}) "

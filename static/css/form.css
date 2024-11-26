@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karma', serif; /* Add a Nepali-friendly font if available */
+}
+body{
+    background: #ffe8d6; /* Light peach background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    overflow-x: hidden;
+    width: 100vw;
+}
+hr{
+    height: 3px;
+    background-color: black;
+    border: none;
+    border-radius: 15%;
+}
+a{
+    text-decoration: none;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wedding-form{
+    width: 90%;
+    color: red;
+    padding: 20px 30px;
+    border: 5px solid #d4af37;
+    border-radius: 30px;
+}
+.wedding-form h1, .groom-details h2, .bride-details h2, .marriage-details h2{
+    text-align: center;
+}
+.wedding-card-details{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.groom-details, .bride-details, .marriage-details{
+    height: 100%;
+    width: 50%;
+    padding: 20px 50px;
+}
+.photo{
+    border: none;
+    height: 20px;
+}
+.groom-details form, .bride-details form, .marriage-details form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    gap: 10px;
+}
+label{
+    display: block;
+    margin-top: 50px !important;
+    font-size: 1.25rem;
+    color: black;
+}
+input{
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid black;
+    margin-top: 5px;
+    padding: 15px;
+    font-size: large;
+}
+.marriage-details input{
+    border: none;
+}
+#groom_photo, #bride_photo{
+    margin-top: 0;
+    padding: 50px;
+}
+#groom_photo:focus, #bride_photo:focus{
+    border: none;
+}
+input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 3px solid red;
+}
+.marriage-details{
+    margin-top: 30px;
+}
+
+.generate{
+    height: max-content !important;
+    width: max-content;
+    background-color: rgb(255, 135, 135);
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    padding: 5px 10px; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 20px;
+}
+.generate:hover{
+    transform: translateY(-5px);
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v={{ STATIC_VERSION }}">
+
+</head>
+<body>
+  <h2>Card Sample 1 (Nepali)</h2>
+  <div class="wedding-card">
+    <!-- Header Section -->
+    <div class="card-header">
+      <div class="groom-image">
+        <img src="{{marriage.groom_photo.url}}" alt="Groom's Photo">
+      </div>
+      <div class="mantra-section">
+        <div class="main-mantra flex-center">
+          <h3>|| श्री गणेशाय नमः ||</h3>
+        </div>
+        <div class="secondary-mantra">
+          <div class="first-half">
+            <h5>मंगलम् भगवान विष्णुः<br>
+              मंगलम् गरुड़ध्वजः ।<br></h5>
+          </div>
+          <div class="ganesh-image">
+            <img src="{%static 'images/ganesh-image.jpg' %}" alt="Ganesh">
+          </div>
+          <div class="second-half">
+            <h5>मंगलम् पुण्डरीकाक्षः<br>
+              मंगलायतनो हरिः ॥</h5>
+          </div>
+        </div>
+        <div class="subha-bibaha flex-center">
+          <img src="{%static 'images/kalash.jpeg' %}" alt="Kalash">
+          <h1>शुभ विवाह</h1>
+          <img src="{%static 'images/kalash.jpeg' %}" alt="Kalash">
+        </div>
+      </div>
+      <div class="bride-image">
+        <img src="{{marriage.bride_photo.url}}" alt="">
+      </div>
+    </div>
+    <div class="card-text-section">
+      <p> <strong>मान्यवर,</strong><br>
+        हाम्रा कुलदेवताको असीम अनुकम्पाले हामो नाती <b>{{marriage.groom_first_name_nepali}} {{marriage.groom_last_name_nepali}}</b> 
+        (श्री {{marriage.groom_father_nepali}} तथा श्रीमती {{marriage.groom_mother_nepali}} को सुपुत्र) को 
+        {{marriage.venue_nepali}} निवासी श्री {{marriage.bride_father_nepali}} तथा 
+        श्रीमती {{marriage.bride_mother_nepali}} की सुपुत्री <b>आयु. {{marriage.bride_first_name_nepali}} {{marriage.bride_last_name_nepali}}</b> का साथ 
+        सुसम्पन्न हुने शुभ-विवाहमा यहाँको गरिमामय उपस्थिति भई इष्ट-मधु-आशिर्वाद 
+        प्रदान गरिदिनु हुन यहाँलाई सादर निमन्त्रणा गर्दछौं।</p>
+    </div>
+    <div class="card-footer">
+      <div class="darshnavilasi">
+        <h3>दर्शनार्थी :</h3>
+        <p>{{marriage.groom_relative1_nepali}}<br>
+          {{marriage.groom_relative2_nepali}} <br>
+          {{marriage.groom_relative3_nepali}} <br></p>
+      </div>
+      <img src="https://png.pngtree.com/png-clipart/20221006/original/pngtree-wedding-couple-character-vector-design-free-download-png-image_8656539.png" alt="Couple">
+      <div class="binit">
+        <h3>विनीत :</h3>
+        <p>{{marriage.bride_relative1_nepali}} <br>
+          {{marriage.bride_relative2_nepali}} <br>
+          {{marriage.bride_relative3_nepali}}</p>
+      </div>
+    </div>
+  </div>
+  {% comment %} <a href="{% url 'download_card' groom.id bride.id marriage.id %}">
+    <button class="download">Download Card</button>
+</a> {% endcomment %}
+  <div class="card-sample2">
+    <h2>Card Sample 2 (English)</h2>
+    <div class="wedding-card-eng">
+      <div class="eng-card-header">
+        <h2>|| Shree Ganeshaya Namah ||</h2>
+        <img src="{%static 'images/ganesh-image.jpg' %}" alt="Ganesh">
+        <h2>~~ Wedding ~~</h2>
+      </div>
+      <div class="eng-card-content">
+        <p>Mrs. {{marriage.groom_mother}} and Mr. {{marriage.groom_father}}
+          Invite you to grace and bless the marriage ceremony
+          of their beloved son</p>
+      </div>
+      <div class="main-card-content">
+        <img src="{{marriage.groom_photo.url}}" alt="Groom's Photo">
+        <div class="wedding-text">
+          <h2>{{marriage.groom_first_name}}</h2>
+          <h3>WEDS</h3>
+          <h2>{{marriage.bride_first_name}}</h2>
+        </div>
+        <img src="{{marriage.bride_photo.url}}" alt="Bride's Photo">
+      </div>
+      <div class="eng-card-details">
+        <p><strong>(Daughter of Mrs. {{marriage.bride_mother}} and Mr. {{marriage.bride_father}}) </strong><br><br>
+          <strong>On {{marriage.date}}</strong><br>
+          Baaraat - {{marriage.time}} <br><br><br>
+          Wedding Ceremony - {{marriage.time}} <br>
+          (Lunch to follow) <br><br><br>
+          Noah's Fairview <br>
+          {{marriage.venue}}<br><br><br>
+          With Best Compliments from <br>
+          Mrs. {{marriage.groom_mother}} and Mr. {{marriage.groom_father}} <br><br></p>
+      </div>
+      <div class="eng-card-footer">
+        <h3>Please RSVP by <br>
+          {{marriage.date}}
+          </h3>
+        <h3>Please <br>
+          No Boxed Gifts</h3>
+      </div>
+    </div>
+    {% comment %} <a href="{% url 'download_card' groom.id bride.id marriage.id %}">
+      <button class="download">Download Card</button>
+  </a> {% endcomment %}
+  </div>
+  <a href="{% url 'home' %}" class="go-back">Resubmit the form</a>
+</body>
+</html>

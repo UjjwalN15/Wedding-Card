@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karma', serif; /* Add a fallback font */
+}
+body {
+    background: #ffe8d6; /* Light peach background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh; /* Ensures full height for better visuals */
+}
+hr {
+    height: 3px;
+    background-color: black;
+    border: none;
+    border-radius: 15%;
+    margin: 10px 0; /* Add spacing around hr for better visuals */
+}
+a {
+    text-decoration: none;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wedding-form {
+    width: 90%;
+    max-width: 1200px; /* Limit max width for larger screens */
+    color: #d72638; /* Adjust text color to a softer red */
+    padding: 20px 30px;
+    border: 5px solid #d4af37; /* Gold border */
+    border-radius: 30px;
+    background-color: #ffffff; /* Add a white background for contrast */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+.wedding-form h1,
+.groom-details h2,
+.bride-details h2,
+.marriage-details h2 {
+    text-align: center;
+    margin-bottom: 15px; /* Add spacing below headings */
+    color: #333; /* Neutral dark color for better readability */
+}
+.wedding-card-details {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Add spacing between sections */
+}
+.groom-details,
+.bride-details,
+.marriage-details {
+    flex: 1 1 calc(50% - 40px); /* Responsive width, accounting for gap */
+    padding: 20px;
+    min-width: 300px; /* Ensure minimum width for smaller screens */
+}
+.photo {
+    border: none;
+    height: 40px; /* Increase height for better clickability */
+    cursor: pointer;
+}
+.groom-details form,
+.bride-details form,
+.marriage-details form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem; /* Adjust font size for readability */
+    gap: 15px; /* Increase spacing for better layout */
+}
+.groom-details input,
+.marriage-details input,
+.bride-details input {
+    width: 100%;
+    height: 45px; /* Increase input height */
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid black;
+    padding: 0 10px; /* Add horizontal padding for better UX */
+    font-size: 1rem;
+    transition: border-bottom-color 0.3s ease; /* Smooth focus effect */
+}
+#groom_photo,
+#bride_photo {
+    margin-top: 0;
+    padding: 10px; /* Adjust padding for consistency */
+    border: none;
+}
+label {
+    font-size: large;
+    display: block;
+    margin-top: 50px;
+    font-weight: bold; /* Make labels more noticeable */
+}
+.groom-details input:focus,
+.marriage-details input:focus,
+.bride-details input:focus {
+    outline: none;
+    border-bottom: 3px solid #d72638; /* Softer red for focus */
+}
+.marriage-details {
+    margin-top: 30px;
+}
+.generate {
+    background-color: #ff8787; /* Softer red for the button */
+    color: #000;
+    font-size: 1.25rem;
+    padding: 10px 20px; /* Add padding for better clickability */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Add smooth transitions */
+    margin-top: 20px;
+}
+.generate:hover {
+    transform: translateY(-5px);
+    background-color: #ff6b6b; /* Darker shade on hover */
+}
