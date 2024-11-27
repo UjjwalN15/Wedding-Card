@@ -10,7 +10,7 @@
 </head>
 <body>
   <h2>Card Sample 1 (Nepali)</h2>
-  <div class="wedding-card">
+  <div class="wedding-card" id="sampleCard1">
     <!-- Header Section -->
     <div class="card-header">
       <div class="groom-image">
@@ -68,12 +68,10 @@
       </div>
     </div>
   </div>
-  {% comment %} <a href="{% url 'download_card' groom.id bride.id marriage.id %}">
-    <button class="download">Download Card</button>
-</a> {% endcomment %}
+  <button class="download" id="sample1Download">Download Card</button>
   <div class="card-sample2">
     <h2>Card Sample 2 (English)</h2>
-    <div class="wedding-card-eng">
+    <div class="wedding-card-eng" id="sampleCard2">
       <div class="eng-card-header">
         <h2>|| Shree Ganeshaya Namah ||</h2>
         <img src="{%static 'images/ganesh-image.jpg' %}" alt="Ganesh">
@@ -112,10 +110,49 @@
           No Boxed Gifts</h3>
       </div>
     </div>
-    {% comment %} <a href="{% url 'download_card' groom.id bride.id marriage.id %}">
-      <button class="download">Download Card</button>
-  </a> {% endcomment %}
+    <button class="download" id="sample2Download">Download Card</button>
+  </div>
+  
   </div>
   <a href="{% url 'home' %}" class="go-back">Resubmit the form</a>
+
+
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+  const sample1DownloadBtn = document.getElementById('sample1Download');
+  const sample2DownloadBtn = document.getElementById('sample2Download');
+
+
+  sample1DownloadBtn.addEventListener('click',()=>{
+    const sampleCard1= document.getElementById('sampleCard1');
+    html2canvas(sampleCard1).then(canvas => {
+      // Convert canvas to data URL
+      const imgData = canvas.toDataURL('image/jpeg');
+
+      // Create a temporary link to trigger download
+      const link = document.createElement('a');
+      link.href = imgData;
+      link.download = 'downloaded_image.jpg';
+
+      // Trigger the download
+      link.click();
+    });
+  });
+  sample2DownloadBtn.addEventListener('click',()=>{
+    const sampleCard2= document.getElementById('sampleCard2');
+    html2canvas(sampleCard2).then(canvas => {
+      // Convert canvas to data URL
+      const imgData = canvas.toDataURL('image/jpeg');
+
+      // Create a temporary link to trigger download
+      const link = document.createElement('a');
+      link.href = imgData;
+      link.download = 'downloaded_image.jpg';
+
+      // Trigger the download
+      link.click();
+    });
+  });
+</script>
 </html>

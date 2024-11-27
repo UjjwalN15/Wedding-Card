@@ -168,3 +168,92 @@ body h2, .card-sample2 h2{
 .go-back:hover, .download:hover{
   transform: translateY(-5px);
 }
+
+.card {
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px rgba(244, 185, 185, 0.2);
+  text-align: center;
+  border: 2px solid #efdede;
+  background-color: rgb(255, 255, 255);
+  background-blend-mode: multiply;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.header {
+  font-size: 2rem;
+  color: #607d4a;
+  margin-top: 200px;
+}
+
+.names h1 {
+  font-family: "Sevillana", cursive;
+  font-size: 5rem;
+  color: #2d5933;
+  margin: 5px 0;
+}
+.names img{
+  background-color: white; /* Ensures the image's background is transparent */
+  mix-blend-mode: multiply; 
+}
+.ring-icon {
+  height: 200px;
+  margin: 10px 0;
+}
+
+.message {
+  font-size: 1rem;
+  color: #4a614a;
+  margin: 15px 0;
+}
+
+.details {
+  font-size: 1rem;
+  color: #2d5933;
+  margin-top: 30px;
+}
+
+.details .day {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.details .date {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 10px 0;
+}
+.between-line{
+  padding: 5px;
+  border-top: 2px solid green;
+  border-bottom: 2px solid green;
+}
+
+.details .highlight {
+  font-size: 3rem;
+  color: #a16829;
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.footer img{
+  width: 400px;
+  height: 400px;
+  background-color:transparent; /* Ensures the image's background is transparent */
+  mix-blend-mode: multiply;  
+}
+.icon {
+  width: 80px;
+  margin: 10px;
+}

@@ -72,7 +72,7 @@ def home(request):
             bride_relative3=bride_relative3,
             
             
-            date=date,
+            date=date_obj,
             time=time,
             venue=venue,
             
@@ -106,8 +106,5 @@ def home(request):
         # Redirect to 'card' after successful save}
     return render(request, 'form.html')
 
-
-def card(request):
-    return render(request, 'index.html')
 
 

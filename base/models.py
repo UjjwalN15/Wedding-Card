@@ -39,4 +39,4 @@ class Marriage(models.Model):
     venue_nepali = models.CharField(max_length=300)
 
     def __str__(self):
-        return f"({self.groom_first_name}{self.groom_last_name} WEDS {self.bride_first_name}{self.bride_last_name}) "
+        return f"({self.groom_first_name} {self.groom_last_name} WEDS {self.bride_first_name} {self.bride_last_name}) "
