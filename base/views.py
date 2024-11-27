@@ -48,7 +48,7 @@ def home(request):
 
         # bs_date = NepaliDate(date_obj).to_nepali()
         # bs_date_str = bs_date.to_date_string()  
-            # For date formatting in Nepali
+        #     # For date formatting in Nepali
 
         # Creating Instances in Database
         marriage = Marriage.objects.create(
@@ -102,9 +102,21 @@ def home(request):
         context = {
             'marriage': marriage,
         }
-        return render(request,'index.html', context)
+         # Redirect to the new URL with a context (if needed)
+        return redirect(f'/wedding-card/?marriage_id={marriage.id}')
         # Redirect to 'card' after successful save}
     return render(request, 'form.html')
+
+def wedding_card_view(request, marriage_id=None):
+    # Fetch the marriage data using the ID (optional)
+    marriage_id = request.GET.get('marriage_id')
+    marriage = Marriage.objects.get(id=marriage_id)
+
+    context = {
+        'marriage': marriage,
+    }
+    return render(request, 'index.html', context)
+
 
 
 

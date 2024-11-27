@@ -9,7 +9,7 @@
 
 </head>
 <body>
-  <h2>Card Sample 1 (Nepali)</h2>
+  <h2 class="card-heading">Card Sample 1 (Nepali)</h2>
   <div class="wedding-card" id="sampleCard1">
     <!-- Header Section -->
     <div class="card-header">
@@ -70,7 +70,7 @@
   </div>
   <button class="download" id="sample1Download">Download Card</button>
   <div class="card-sample2">
-    <h2>Card Sample 2 (English)</h2>
+    <h2 class="card-heading">Card Sample 2 (English)</h2>
     <div class="wedding-card-eng" id="sampleCard2">
       <div class="eng-card-header">
         <h2>|| Shree Ganeshaya Namah ||</h2>
@@ -112,6 +112,34 @@
     </div>
     <button class="download" id="sample2Download">Download Card</button>
   </div>
+  <div class="card-sample3">
+    <h2 class="card-heading">Card Sample 3 (English)</h2>
+    <div class="card" id="sampleCard3" style="background:url('{% static "images/flower bg.jpg" %}')">
+      <div class="header"><h3>Save The Date</h3></div>
+      <div class="names">
+        <h1>{{marriage.groom_first_name}}</h1>
+        <img src="{% static 'images/couple-ring.png' %}" alt="Wedding Rings" class="ring-icon">
+        <h1>{{marriage.bride_first_name}}</h1>
+      </div>
+      <p class="message">
+        Wishing you both endless joy and love on this beautiful journey as you build your new lives together.
+      </p>
+      <div class="details">
+        <p class="date">
+          <span class="between-line">{{marriage.date|date:"F"}}</span> <span class="highlight">{{marriage.date.day}}</span> <span class="between-line">{{marriage.date.year}}</span>
+        </p>
+        <p class="time">At {{marriage.time}}</p>
+        <p class="address">{{marriage.venue}}</p>
+      </div>
+      <div class="footer">
+        <img src="{% static 'images/couple1.png' %}" alt="Couple Icon" class="icon">
+        <img src="{% static 'images/couple2.png' %}" alt="Couple Icon" class="icon">
+      </div>
+    </div>
+    <div class="flex-center">
+      <button class="download" id="sample3Download">Download Card</button>
+    </div>
+  </div>
   
   </div>
   <a href="{% url 'home' %}" class="go-back">Resubmit the form</a>
@@ -122,6 +150,7 @@
 <script>
   const sample1DownloadBtn = document.getElementById('sample1Download');
   const sample2DownloadBtn = document.getElementById('sample2Download');
+  const sample3DownloadBtn = document.getElementById('sample3Download');
 
 
   sample1DownloadBtn.addEventListener('click',()=>{
@@ -133,7 +162,7 @@
       // Create a temporary link to trigger download
       const link = document.createElement('a');
       link.href = imgData;
-      link.download = 'downloaded_image.jpg';
+      link.download = 'sampleCard1.jpg';
 
       // Trigger the download
       link.click();
@@ -148,7 +177,23 @@
       // Create a temporary link to trigger download
       const link = document.createElement('a');
       link.href = imgData;
-      link.download = 'downloaded_image.jpg';
+      link.download = 'sampleCard2.jpg';
+
+      // Trigger the download
+      link.click();
+    });
+  });
+  
+  sample3DownloadBtn.addEventListener('click',()=>{
+    const sampleCard3= document.getElementById('sampleCard3');
+    html2canvas(sampleCard3).then(canvas => {
+      // Convert canvas to data URL
+      const imgData = canvas.toDataURL('image/jpeg');
+
+      // Create a temporary link to trigger download
+      const link = document.createElement('a');
+      link.href = imgData;
+      link.download = 'sampleCard3.jpg';
 
       // Trigger the download
       link.click();

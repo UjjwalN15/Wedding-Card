@@ -12,8 +12,9 @@ body {
   overflow-x: hidden;
   padding: 30px;
 }
-body h2, .card-sample2 h2{
+.card-heading{
   font-size: 3rem;
+  text-align: center;
 }
 .flex-center{
   display: flex;
@@ -58,7 +59,7 @@ body h2, .card-sample2 h2{
   font-size: 1.25rem;
 }
 .first-half h5, .second-half h5{
-  font-size: 0.75rem;
+  font-size: 1.5rem;
 }
 .subha-bibaha{
   gap: 30px;
@@ -99,7 +100,7 @@ body h2, .card-sample2 h2{
   border: 5px solid #d4af37;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  background-color: lightgreen;
+  background: rgba(255, 255, 255, 0.8);
   padding: 30px;
 }
 .eng-card-header{
@@ -172,6 +173,7 @@ body h2, .card-sample2 h2{
 .card {
   padding: 20px;
   border-radius: 15px;
+  max-width: 1000px;
   box-shadow: 5px 5px 10px rgba(244, 185, 185, 0.2);
   text-align: center;
   border: 2px solid #efdede;
@@ -203,10 +205,10 @@ body h2, .card-sample2 h2{
   margin: 10px 0;
 }
 
-.message {
-  font-size: 1rem;
+.message ,.time, .address{
+  font-size: 1.5rem;
   color: #4a614a;
-  margin: 15px 0;
+  margin: 30px 0;
 }
 
 .details {
@@ -215,13 +217,13 @@ body h2, .card-sample2 h2{
   margin-top: 30px;
 }
 
-.details .day {
+.details .day{
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 .details .date {
-  font-size: 1.5rem;
+  font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -244,7 +246,7 @@ body h2, .card-sample2 h2{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 .footer img{
