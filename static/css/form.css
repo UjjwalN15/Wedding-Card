@@ -79,6 +79,9 @@ input{
 .marriage-details input{
     border: none;
 }
+#venue{
+    border-bottom: 3px solid black !important;
+}
 #groom_photo, #bride_photo{
     margin-top: 0;
     padding: 50px;
@@ -90,6 +93,9 @@ input:focus{
     outline: none;
     border: none;
     border-bottom: 3px solid red;
+}
+.marriage-details input:focus{
+    border-bottom: none !important;
 }
 .marriage-details{
     margin-top: 30px;

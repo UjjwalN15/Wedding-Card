@@ -98,19 +98,31 @@ def home(request):
             time_in_nepali = time.translate(english_to_nepali_digits),
             venue_nepali=translate_to_nepali(venue)
         )
-        # Pass data to index.html
-        context = {
-            'marriage': marriage,
-        }
+        
+        # Store the marriage id in session
+        request.session['marriage_id'] = marriage.id
+        # # Pass data to index.html
+        # context = {
+        #     'marriage': marriage,
+        # }
          # Redirect to the new URL with a context (if needed)
-        return redirect(f'/wedding-card/?marriage_id={marriage.id}')
+        return redirect(f'/wedding-card/')
         # Redirect to 'card' after successful save}
     return render(request, 'form.html')
+from django.http import Http404
 
 def wedding_card_view(request, marriage_id=None):
     # Fetch the marriage data using the ID (optional)
-    marriage_id = request.GET.get('marriage_id')
+    marriage_id = request.session.get('marriage_id')
     marriage = Marriage.objects.get(id=marriage_id)
+    
+    if not marriage_id:
+        raise Http404("No wedding card found for this user")
+
+    try:
+        marriage = Marriage.objects.get(id=marriage_id)
+    except Marriage.DoesNotExist:
+        raise Http404("Wedding card not found")
 
     context = {
         'marriage': marriage,
